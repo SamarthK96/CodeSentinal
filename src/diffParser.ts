@@ -37,15 +37,6 @@ type ParsedFile = {
     hunks: ParsedHunk[];
 };
 
-type ReviewChunk = {
-    filename: string;
-    startLine: number;
-    endLine: number;
-    addedLines: number[];
-    codeWithContext: string;
-    removedLines: string[];
-};
-
 export function parseHunkHeader(header: string) {
     // if (typeof header == undefined) throw new Error("Invalid hunk header:" + header);
         const regex = /^@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@/;
